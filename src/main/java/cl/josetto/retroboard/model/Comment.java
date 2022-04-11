@@ -3,7 +3,6 @@ package cl.josetto.retroboard.model;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.yaml.snakeyaml.comments.CommentType;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
