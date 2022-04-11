@@ -74,4 +74,11 @@ public class Comment {
     public void setCommentType(CommentType commentType) {
         this.commentType = commentType;
     }
+
+    public static Comment createCommentFrom(String comment, CommentType commentType) {
+        Comment commentObj = new Comment();
+        commentObj.setComment(comment);
+        commentObj.setCommentType(commentType);
+        return commentObj;
+    }
 }
