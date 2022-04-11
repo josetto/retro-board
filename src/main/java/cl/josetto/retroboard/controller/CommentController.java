@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -29,7 +30,7 @@ public class CommentController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("time", new SimpleDateFormat("yyyy-MM-dddd HH:mm:ss"));
+        model.addAttribute("time", new SimpleDateFormat("yyyy-MM-dddd HH:mm:ss").format(new Date()));
         List<Comment> allComments = commentService.getAllCommentsForToday();
         Map<CommentType, List<Comment>> groupedComments =
                 allComments.stream().collect(Collectors.groupingBy(Comment::getCommentType));
